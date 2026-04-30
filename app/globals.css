@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+body {
+  background: #05070d;
+}
+
+/* Premium scrollbars (only inside the phone) */
+.phone-scroll::-webkit-scrollbar { width: 4px; }
+.phone-scroll::-webkit-scrollbar-track { background: transparent; }
+.phone-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee, #1a6cf5);
+  border-radius: 2px;
+}
+
+/* Glass card */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.015) 100%);
+  border: 1px solid rgba(255,255,255,.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 100%);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Subtle dotted grid for backgrounds */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Shimmer text */
+.shimmer-text {
+  background: linear-gradient(90deg, #cfe5ff 0%, #ffffff 40%, #22d3ee 60%, #cfe5ff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Inner glow ring */
+.ring-glow {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 10px 30px -10px rgba(0,0,0,.6);
+}
+
+/* Hide number spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+
+/* Tactile button shine */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: sweep 2.6s linear infinite;
+}
+
+/* Marquee gradient border */
+.gradient-border {
+  position: relative;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34,211,238,.6), rgba(26,108,245,.4), rgba(245,196,81,.5));
+}
